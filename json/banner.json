@@ -1,37 +1,37 @@
 {
 	"banners": [
 		{
-			"src": "../img/hero-1.jpg", 
-			"title": "THE BEST GYM<br>YOU WILL EVER FIND", 
-			"desc": "FREE 30 DAY TRIAL",
-			"class": "type-c", 
+			"src": "../img/woman.png", 
+			"title": "There is nothing sweeter than being slim", 
+			"desc": "날씬한것보다 달콤한것은 없다.",
+			"class": "type-b", 
 			"buttons": [
 				{"title": "GIVE IT A TRY NOW", "link": "#", "class": "bt-ghost"}
 			]
 		},
 		{
-			"src": "../img/hero-2.jpg",
-			"title": "FIGHT THE WEAKNESS", 
-			"desc": "WE GO THE JOURNEY WITH YOU",
-			"class": "type-c", 
+			"src": "../img/woman3.png",
+			"title": "The taste you've never tasted before", 
+			"desc": "먹어봤자 알고있는 그 맛,",
+			"class": "type-b", 
 			"buttons": [
 				{"title": "PRICING", "link": "#", "class": "bt-orange"},
 				{"title": "LEARN MORE", "link": "#", "class": "bt-gray"}
 			]
 		},
 		{
-			"src": "../img/hero-3.jpg",
-			"title": "HAVE FUN IN GROUPS", 
-			"desc": "STAY MOTIVATED AND FIND NEW FRIENDS",
+			"src": "../img/suit1.png",
+			"title": "Let's exercise to make a perfect suit fit", 
+			"desc": "완벽한 수트핏, 해답은 운동",
 			"class": "type-c", 
 			"buttons": [
 				{"title": "SEE OUR CLASSES", "link": "#", "class": "bt-ghost"}
 			]
 		},
 		{
-			"src": "../img/hero-4.jpg",
-			"title": "PERSONAL TRAINING", 
-			"desc": "GET IN SHAPE WITH THE HELP OF A COACH",
+			"src": "../img/woman2.png",
+			"title": "Life is divided into fattening and not fat", 
+			"desc": "인생은 살이 쪘을 때와 안 쪘을때로 나뉜다.",
 			"class": "type-l", 
 			"buttons": [
 				{"title": "BOOK NOW", "link": "#", "class": "bt-ghost"}

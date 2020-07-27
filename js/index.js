@@ -23,12 +23,31 @@ $(".section").each(function(i){
 }); 
 */
 
+if(5>3 && 6>5) console.log("true && true");	// AND
+if(5>3 || 4>5) console.log("true || false"); // OR
+/*
+true 	&& true 	=> true
+true 	&& false 	=> false
+false && true 	=> false
+false && salse 	=> false
+
+true 	|| true 	=> true
+true 	|| false 	=> true
+false || true 	=> true
+false || false 	=> false
+*/
+
 /************ 전역변수 *************/
 var datas;
 var mainNow = 0;
 var mainPrev, mainNext, mainLast;
-mainAjax();
+var infoChk = true; 	// info-wrap의 애니메이션 진행여부(true면 진행, flase면 무시)
 
+
+/************ Initialize *************/
+mainAjax();
+emailjs.init('user_smMWAX6z5DTXk3CBpGn8J');
+$('#background').YTPlayer();
 
 /************ 사용자함수 *************/
 function mainAjax() {
@@ -116,6 +135,42 @@ function onResize() {
 	*/
 }
 
+
+function onScroll() {
+	var scTop = $(this).scrollTop();
+	var bottom = scTop + $(this).innerHeight() - 200;
+
+	$(".ani").each(function(){
+		if(bottom > $(this).offset().top) { // .ani가 화면에 나타나면
+			if($(this).hasClass("pers")) $(this).parent().css("perspective", "400px");
+			if($(this).data("delay")) $(this).css("animation-delay", $(this).data("delay"));
+			$(this).css("animation-play-state", "running");
+		}
+	});
+
+	if(	bottom > $(".info-wrap").offset().top && infoChk ) {
+		infoChk = false;
+		$(".info-wrap").find(".title").each(function(idx){
+			var $obj = $(this).find(".score");
+			var speed = Number($(this).data("speed"));
+			var gap = Number($(this).data("gap"));
+			var target = Number($(this).data("target"));
+			var interval = setInterval(function(){
+				var value = Number($obj.html());
+				$obj.html(value + gap);
+				if(value >= target) {
+					clearInterval(interval);
+					$obj.html(target);
+					if(idx == 0) $obj.html($obj.html().substr(0, 2) + $obj.html().substr(2, 2)); 
+				}
+			}, speed);
+		});
+	}
+
+	if(scTop > 800) $(".bt-top").css("visibility", "visible");
+	else $(".bt-top").css("visibility", "hidden");
+}
+
 function onNaviHover() {
 	$(this).find(".subs").stop().fadeIn(500);
 }
@@ -183,10 +238,29 @@ function onPagerClick() {
 	$(".main-wrap > .slide").eq(1).stop().animate({"top": 0}, 500, mainInit);
 }
 
+function onMasonry(){
+	$masonry.masonry({
+		itemSelector: '.class',
+		columnWidth: '.class-sizer',
+		percentPosition: true
+	});
+}
 
+function onContact(event) {
+	event.preventDefault();
+	this.contact_number.value = Math.random() * 100000 | 0;
+	emailjs.sendForm('gmail', 'gym-temp', this);
+	alert("Subscribe 신청이 완료되었습니다.");
+	this.reset();
+}
+
+function onTopClick() {
+	$("html, body").stop().animate({"scrollTop": 0}, 800, onScroll);
+}
 
 /************ 이벤트선언 *************/
 $(window).resize(onResize).trigger("resize");
+$(window).scroll(onScroll).trigger("scroll");
 
 $(".header .navi-child").hover(onNaviHover, onNaviLeave);
 $(".header .navi-bars").click(onBarClick);
@@ -197,11 +271,8 @@ $(".main-wrap > .bt-next").click(onMainNext);
 
 $("section").imagesLoaded(onResize);
 
+var $masonry = $(".classes").imagesLoaded(onMasonry);
 
-var $masonry = $(".classes").imagesLoaded(function(){
-	$masonry.masonry({
-		itemSelector: '.class',
-		columnWidth: '.class-sizer',
-		percentPosition: true
-	});
-});
+$('#contactForm').submit(onContact);
+
+$(".bt-top").click(onTopClick);

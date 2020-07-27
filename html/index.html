@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Enfold GYM</title>
+	<title>스포애니 spoAny</title>
 	<link rel="stylesheet" href="../css/all.min.css">
 	<link rel="stylesheet" href="../css/animate.css">
 	<link rel="stylesheet" href="../css/jquery.mb.YTPlayer.min.css">
@@ -13,12 +14,14 @@
 	<script src="../js/imagesloaded.pkgd.min.js"></script>
 	<script src="../js/masonry.pkgd.min.js"></script>
 	<script src="../js/jquery.mb.YTPlayer.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
 </head>
+
 <body>
 	<div class="wrapper">
 		<header class="header clear">
 			<h1 class="logo">
-				<img src="../img/logo.png" alt="로고" class="img">
+				<img src="../img/main-logo.png" alt="로고" class="img">
 			</h1>
 			<ul class="sns-wrap">
 				<li class="facebook-icon"><i class="fab fa-facebook"></i></li>
@@ -26,26 +29,50 @@
 				<li class="mail-icon"><i class="fa fa-envelope"></i></li>
 			</ul>
 			<ul class="navi-wrap">
-				<li class="active">Welcome</li>
-				<li class="navi-child">
-					About
+				<li class="navi-child active">스포애니
 					<ul class="subs">
-						<li>Our Team</li>
-						<li>Our Mission</li>
-						<li>Our Studio</li>
-						<li>Gallery</li>
+						<li>스포애니 소개</li>
+						<li>회사소개</li>
+						<li>CEO Message</li>
+						<li>히스토리</li>
+						<li>브랜드 안내</li>
+						<li>브랜드 아이덴티티</li>
+						<li>채용지원</li>
 					</ul>
 				</li>
 				<li class="navi-child">
-					Classes
+					프로그램
 					<ul class="subs">
-						<li>Class Overview</li>
-						<li>Timetable</li>
+						<li>트레이닝</li>
+						<li>퍼스널 트레이닝</li>
+						<li>그룹 엑서사이즈</li>
+						<li>스페셜 프로그램</li>
 					</ul>
 				</li>
-				<li>Pricing</li>
-				<li>News</li>
-				<li>Contact</li>
+				<li class="navi-child">
+					지점찾기
+				</li>
+
+				<li>회원권 신청</li>
+
+				<li class="navi-child">회원전용
+					<ul class="subs">
+						<li>더베스트</li>
+						<li>데일리 프로그램</li>
+						<li>운동정보</li>
+						<li>마이페이지</li>
+						<li>1:1문의/건의</li>
+					</ul>
+				</li>
+				<li class="navi-child">고객센터
+				<ul class="subs">
+					<li>뉴스</li>
+					<li>보도자료</li>
+					<li>제휴문의</li>
+					<li>제휴업체 특가</li>
+					<li>자주묻는 질문</li>
+				</ul>
+</li>
 			</ul>
 			<div class="fix-wrap">
 				<div>
@@ -86,7 +113,7 @@
 
 		<section class="main-wrap">
 			<!-- <div class="slide">
-				<img src="../img/hero-1.jpg" class="img">
+				<img src="../img/suit1.jpg" class="img">
 			</div> -->
 			<div class="bt bt-prev">〈</div>
 			<div class="bt bt-next">〉</div>
@@ -96,29 +123,33 @@
 		<section class="ad-wrap">
 			<article class="ad clear">
 				<div class="icon">
-					<i class="fa fa-dumbbell"></i>	
+					<i class="fa fa-dumbbell"></i>
 				</div>
 				<div class="content">
-					<div class="title">GET IN SHAPE NOW.</div>
-					<div class="desc">Lorem ipsum dolor sit amet, consec olor etscing elit. Aenget dolor.</div>
+					<div class="title">ANY TIME.</div>
+					<div class="desc">24시간 365일<br> 
+					시간에 구애받지 말고 운동해보세요!
+					</div>
 				</div>
 			</article>
 			<article class="ad clear">
 				<div class="icon">
-					<i class="fa fa-medal"></i>	
+					<i class="fa fa-medal"></i>
 				</div>
 				<div class="content">
-					<div class="title">#1 DESTINATON FOR SPORTS<span>.</span></div>
-					<div class="desc">Aenean massa. Cum sociis natoque penatibus et magnis dis partdiculus mus.</div>
+					<div class="title">ANY WHERE<span>.</span></div>
+					<div class="desc">전지점 이용가능<br>
+						전국 81호점 지점에서 이용 가능합니다!
+					</div>
 				</div>
 			</article>
 			<article class="ad clear">
 				<div class="icon">
-					<i class="fab fa-whmcs"></i>	
+					<i class="fab fa-whmcs"></i>
 				</div>
 				<div class="content">
-					<div class="title">FREE NUTRITION PLANS<span>.</span></div>
-					<div class="desc">Donec quam felis, ultricies nec, pellentesque equat massa quis enim.</div>
+					<div class="title">다양한 운동 종목<span>.</span></div>
+					<div class="desc">헬스,요가, 필라테스 등 다양한 운동종목에 도전하세요!</div>
 				</div>
 			</article>
 		</section><!-- ad-wrap -->
@@ -126,55 +157,176 @@
 		<section class="welcome-wrap">
 			<div class="welcome wrapper-small">
 				<h2 class="title">
-					WELCOME TO THE ENFOLD-GYM<span class="red-dot">.</span>
+					WELCOME TO THE <span class="red-dot">SPOANY</span>
 				</h2>
 				<p class="desc">
-					Enfold Gym leads the fitness industry when it comes to helping people reach their fitness goals. We have Crossfit courses, a full weight room, multiple cardio areas, personal trainings, group classes, and more!
+					스포애니는 언제 어디서나, 누구나 편리하고 부담 없이 이용할 수 있는 스포츠센터라는 뜻입니다.
 				</p>
 				<button class="bt-more">
-					LEARN MORE <i class="fa fa-angle-right"></i>
+					지원하기 <i class="fa fa-angle-right"></i>
 				</button>
 			</div>
 		</section><!-- welcome-wrap -->
 
-	<section class="class-wrap">
-		<div class="wrapper-small">
-			<h2 class="title">CLASSES TO TAKE IN OUR GYM<i class="red-dot">.</i></h2>
-			<p class="desc">We offer a multitude of fun and motivating classes that allow you to work out alone or with friends. Our trainers are highly educated and will make sure you give your all.<br>
-			The classes are:
-			</p>
-		</div>
-		<div class="class-items">
-			<ul class="classes clear">
-				<li class="class-sizer"></li>
-				<li class="class">
-					<img src="../img/hero-3-705x338.jpg" class="imgv">
-					<h3 class="title">AEROBICS</h3>
+		<section class="class-wrap">
+			<div class="wrapper-small">
+				<h2 class="title">CLASSES TO TAKE IN OUR GYM<i class="red-dot">.</i></h2>
+				<p class="desc-1">피트니스센터의 혁신 현존하는 가장 진보된 피트니스 센터! <span class="red-dot">스포애니</span>만의 차별화된 Any6 서비스를 소개합니다.
+				</p>
+			</div>
+			<div class="class-items">
+				<ul class="classes clear">
+					<li class="class-sizer"></li>
+					<li class="class ani pers-bottom pers">
+						<img src="../img/hero-3-705x338.jpg" class="imgv">
+						<h3 class="title">AEROBICS</h3>
+					</li>
+					<li class="class ani pers-bottom pers" data-delay="0.2s">
+						<img src="../img/hero-4-705x338.jpg" class="imgv">
+						<h3 class="title">CROSSFIT</h3>
+					</li>
+					<li class="class ani pers-bottom pers" data-delay="0.4s">
+						<img src="../img/hero-6-705x338.jpg" class="imgv">
+						<h3 class="title">GYMNASTICS</h3>
+					</li>
+					<li class="class ani pers-bottom pers" data-delay="0.6s">
+						<img src="../img/hero-2-705x338.jpg" class="imgv">
+						<h3 class="title">PUMPING IRON</h3>
+					</li>
+					<li class="class ani pers-bottom pers" data-delay="0.8s">
+						<img src="../img/hero-5-705x338.jpg" class="imgv">
+						<h3 class="title">RUNNING & SPINNING</h3>
+					</li>
+					<li class="class ani pers-bottom pers" data-delay="1s">
+						<img src="../img/hero-1-705x338.jpg" class="imgv">
+						<h3 class="title">WEIGHT LIFTING</h3>
+					</li>
+				</ul>
+			</div>
+		</section><!-- class-wrap -->
+
+		<section class="contact-wrap wrapper-small">
+			<h2 class="title">APPLY NOW<span class="red-dot">.</span></h2>
+			<form action="#" class="contact-form" id="contactForm">
+				<input type="hidden" name="contact_number">
+				<input type="text" class="input red w150" name="name" placeholder="Name*">
+				<input type="text" class="input red w200" name="email" placeholder="Email*">
+				<input type="text" class="input red w200" name="msg" placeholder="Message*">
+				<button class="button red w200">Subscribe</button>
+			</form>
+		</section><!-- contact-wrap -->
+
+		<section id="background" class="player about-wrap" data-property="{videoURL:'https://youtube.com/embed/oXdzvMLiE7Q', mute: true, showControls: false, useOnMobile: true, quality: 'highres', containment: 'self', loop: true, autoPlay: true, stopMovieOnBlur: false, startAt: 0, opacity: 0.4}">
+			<div class="wrapper-small">
+				<h2 class="title">
+					WHAT ARE YOU WAITING FOR<span class="red-dot">?</span>
+				</h2>
+				<p class="desc">
+				이제 온라인에서 직접 관리하세요!
+				새로워진 홈페이지와 어플로 회원권 결제는 물론 회원정보 조회,변경까지 직접 관리하실 수 있습니다.
+				</p>
+				<div class="icon-wrap clear">
+					<div class="icons ani scale-up" data-delay="0.6s">
+						<div class="icon"><i class="fa fa-dumbbell"></i></div>
+						<div class="desc">GROW <span class="red-dot">STRONGER</span></div>
+						<div class="desc-hover">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab</div>
+					</div>
+					<div class="icons ani scale-up" data-delay="0.2s">
+						<div class="icon"><i class="fa fa-stopwatch"></i></div>
+						<div class="desc">GROW <span class="red-dot">FASTER</span></div>
+						<div class="desc-hover">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab</div>
+					</div>
+					<div class="icons ani scale-up" data-delay="0.3s">
+						<div class="icon"><i class="fa fa-pizza-slice"></i></div>
+						<div class="desc">EAT <span class="red-dot">HEALTHY</span></div>
+						<div class="desc-hover">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab</div>
+					</div>
+					<div class="icons ani scale-up">
+						<div class="icon"><i class="fa fa-trophy"></i></div>
+						<div class="desc">COMPETE <span class="red-dot">WITH OTHERS</span></div>
+						<div class="desc-hover">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab</div>
+					</div>
+					<div class="icons ani scale-up" data-delay="0.8s">
+						<div class="icon"><i class="fa fa-heartbeat"></i></div>
+						<div class="desc">IMPROVE YOUR <span class="red-dot">HEALTH</span></div>
+						<div class="desc-hover">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab</div>
+					</div>
+				</div><!-- icon-wrap -->
+			</div>
+		</section><!-- about-wrap -->
+
+		<section class="info-wrap">
+			<ul class="infos">
+				<li class="info">
+					<h3 class="title" data-target="24" data-speed="100" data-gap="1">
+						<span class="score">0</span>
+						<span class="gray-dot">H</span>
+					</h3>
+					<p class="desc">Any time</p>
 				</li>
-				<li class="class">
-					<img src="../img/hero-4-705x338.jpg" class="imgv">
-					<h3 class="title">CROSSFIT</h3>
+				<li class="info">
+					<h3 class="title" data-target="7" data-speed="200" data-gap="1">
+						<span class="score">0</span>
+						<span class="gray-dot">Days</span>
+					</h3>
+					<p class="desc">Any days</p>
 				</li>
-				<li class="class">
-					<img src="../img/hero-6-705x338.jpg" class="imgv">
-					<h3 class="title">GYMNASTICS</h3>
-				</li>
-				<li class="class">
-					<img src="../img/hero-2-705x338.jpg" class="imgv">
-					<h3 class="title">PUMPING IRON</h3>
-				</li>
-				<li class="class">
-					<img src="../img/hero-5-705x338.jpg" class="imgv">
-					<h3 class="title">RUNNING & SPINNING</h3>
-				</li>
-				<li class="class">
-					<img src="../img/hero-1-705x338.jpg" class="imgv">
-					<h3 class="title">WEIGHT LIFTING</h3>
+				<li class="info">
+					<h3 class="title" data-target="81" data-speed="20" data-gap="1">
+						<span class="score">0</span>
+						<span class="gray-dot">Studios</span>
+					</h3>
+					<p class="desc">Any where</p>
 				</li>
 			</ul>
-		</div>
-	</section>
-	</div>
+		</section><!-- info-wrap -->
+
+		<footer class="footer-wrap">
+			<ul class="infos wrapper-small">
+				<li class="info">
+					<div class="title">(주)케이디 스포츠</div>
+					<div class="desc">경기도 성남시 분당구 이매동 87-10 스포애니 빌딩</div>
+				</li>
+				<li class="info">
+					<div class="title">사업자 등록번호</div>
+					<div class="desc">
+						<p>129-86-66817</p>
+						
+					</div>
+				</li>
+				<li class="info">
+					<div class="title">대표이사</div>
+					<div class="desc">
+						<p>김경덕</p>
+						
+					</div>
+				</li>
+			</ul>
+		</footer><!-- footer-wrap -->
+
+		<footer class="copy-wrap">
+			<div class="wrapper-small clear">
+				<div class="copyright">
+					&copy;2018 kdsports All right reserved
+					- <a href="#">kdsports</a> 
+					- <a href="#">kdsports Theme by eun</a>
+				</div>
+				<ul class="sns-footer sns-wrap clear">
+					<li class="facebook-icon"><i class="fab fa-facebook"></i></li>
+					<li class="insta-icon"><i class="fab fa-instagram"></i></li>
+					<li class="mail-icon"><i class="fa fa-envelope"></i></li>
+				</ul>
+				<div class="navis-footer">
+					<a href="#">Pricing</a>
+					<a href="#">Contact</a>
+					<a href="#">Privacy Policy</a>
+				</div>
+			</div>
+		</footer><!-- copy-wrap -->
+
+	</div><!-- wrapper -->
+	<div class="bt-top"><i class="fa fa-angle-up"></i></div>
 	<script src="../js/index.js"></script>
 </body>
+
 </html>
